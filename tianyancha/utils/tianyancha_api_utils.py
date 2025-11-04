@@ -47,7 +47,7 @@ class TianYanChaAPIUtils:
             if not dic:
                 return {"query": keyword, "result": "", "url": ""}
         else:
-            async with aiofiles.open(f"{SCRIPT_ROOT}/../temps/test_data.json") as f:
+            async with aiofiles.open(f"{SCRIPT_ROOT}/../temps/test_data.json", encoding="utf-8") as f:
                 s = await f.read()
                 dic = json.loads(s)
         error_code = dic.get("error_code")
